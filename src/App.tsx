@@ -53,7 +53,7 @@ const App = () => {
       }
     }
 
-    if(firstPlayer === 1){
+    if(firstPlayer === 1 && handCounter > 1){
       setFirstPlayer(2);
       updatedP1(-(bb));
       updatedP2(-(sb));
