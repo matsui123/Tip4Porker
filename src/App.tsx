@@ -35,8 +35,8 @@ const App = () => {
 
   useEffect(()=>{
     if(stuck && p1 === 0 && p2 ===0){
-      setP1(stuck-initialValue.bb);
-      setP2(stuck-initialValue.sb);
+      setP1(stuck-initialValue.sb);
+      setP2(stuck-initialValue.bb);
       setPot(initialValue.bb + initialValue.sb);
     }
   },[stuck]);
@@ -55,12 +55,12 @@ const App = () => {
 
     if(firstPlayer === 1){
       setFirstPlayer(2);
-      updatedP1(-(sb));
-      updatedP2(-(bb));
-    }else{
-      setFirstPlayer(1);
       updatedP1(-(bb));
       updatedP2(-(sb));
+    }else{
+      setFirstPlayer(1);
+      updatedP1(-(sb));
+      updatedP2(-(bb));
     }
     setPot(3*sb);
   },[handCounter]);
@@ -114,7 +114,7 @@ const App = () => {
             <SC.SetButton onClick={reseAllValues}>SET</SC.SetButton>
           </SC.Count>
           <SC.Table>
-            <SC.DelerButton player={firstPlayer}>BUTTON/BB</SC.DelerButton>
+            <SC.DelerButton player={firstPlayer}>BUTTON/SB</SC.DelerButton>
             <SC.Player1>{p1}</SC.Player1>
             {/* <SC.Player1Bet>{p1Bet !== 0 && p1Bet}</SC.Player1Bet> */}
             <SC.Player2>{p2}</SC.Player2>
